@@ -1,6 +1,11 @@
 name: Main Taski workflow
 
 on:
+  push:
+    branches:
+      - main
+
+jobs:
   tests:
     runs-on: ubuntu-latest
 
