@@ -147,10 +147,10 @@ jobs:
       - name: Executing remote ssh commands to deploy
         uses: appleboy/ssh-action@master
         with:
-          host: 1
-          username: 1
-          key: 1
-          passphrase: 1
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          key: ${{ secrets.SSH_KEY }}
+          passphrase: ${{ secrets.SHH_PASSPHRASE }}
           script: |
             cd taski
             sudo docker compose -f docker-compose.production.yml pull
